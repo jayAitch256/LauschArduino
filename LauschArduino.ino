@@ -1,28 +1,8 @@
 /***********************************************
-  "Lausch-Arduino", der die Kommunikation eines
-  anderen Arduinos über die serielle Verbindung
-  (z.B. USB) speichert und auf Befehl ausgeben
-  kann
-
-  BOARD: ARDUINO MEGA!
   
-************************************************
-  Einbinden in bestehende Schaltung:
+  !!!   EINSTELLUNGEN IN CONFIG.H-FILE     !!!
 
-  USB/Serial -> PC
-  Serial1 (TX/RX) -> anderer Arduino (RX/TX)
-  VIN -> VIN anderer Arduino
-  GND -> GND anderer Arduino
-
-************************************************
-  !!!   EINSTELLUNGEN IN CONFIG.H-DATEI    !!!
-
-************************************************
-  Speichert Konversation in EEPROM
-  (max. 8 kB!)
-
-  Ausgabe an den PC auf Befehl
-  (einstellbar in Config.h)
+  !!!   EIGENER CODE IN SKETCH.INO!        !!!  
 
 ***********************************************/
 

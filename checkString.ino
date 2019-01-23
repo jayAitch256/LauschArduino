@@ -2,15 +2,16 @@
 //Zeichen und Schlüsselbefehle
 
 //**********************Konstanten*********************************
-//| | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
-//v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v
-//                       KEYWÖRTER!!!
 
-const char keywords [1][1];
+//               LISTE MIT KEYWÖRTERN!!!
+
+const char keywords [1][10] = {"Keywords"};
+const int keywords_anzahl = 1;
+
 
 //*****************************************************************
 
-//-----------------------------Überprüfen einer Zeichenkette von USB--------------------------------
+//----------------Überprüfen einer Zeichenkette von USB---------------
 int check_befehl (char befehl) {
   switch (befehl) {
 
@@ -60,7 +61,6 @@ int check_befehl (char befehl) {
 
 
               default:
-                //Serial.println("ERWISCHT");
                 Serial1.print(keywords[verdacht_ergebnis]);
             }
           }
@@ -72,7 +72,7 @@ int check_befehl (char befehl) {
 }
 
 
-//-----------------------------Überprüfen einer Zeichenkette von Serial1-----------------------------
+//---------------Überprüfen einer Zeichenkette von Serial1----------------
 int check_antwort (char antwort) {
   switch (antwort) {
 
@@ -114,7 +114,6 @@ int check_antwort (char antwort) {
 
 
               default:
-                Serial.println("ERWISCHT");
                 Serial.println(keywords[verdacht_ergebnis]);
             }
           }
@@ -126,7 +125,7 @@ int check_antwort (char antwort) {
 }
 
 
-//-----------------------------Keyword-Kontrolle-----------------------------
+//----------------------Keyword-Kontrolle-----------------
 int verdacht (char befehl, int vonwem) {
   
   #ifdef SPEICHERN
@@ -184,7 +183,6 @@ int verdacht (char befehl, int vonwem) {
         //Serial.println(i);
         return i;
       }
-      //Serial.println(befehl_ausgelesen);
     }
     while (befehl_ausgelesen[j] == keywords[i][j]);
   }

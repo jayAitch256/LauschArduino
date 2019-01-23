@@ -4,9 +4,8 @@ Config-Datei LauschArduino
 
 Damit Änderungen wirksam werden, muss der Sketch neu auf den Arduino hochgeladen werden!
 --------------------------------------------------------------------------------------
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ZUM AKTIVIEREN ODER DEAKTIVIEREN VON OPTIONEN AUSKOMMENTIEREN BZW KOMMENTARSTRICHE VOR DEM 'DEFINE' LÖSCHEN
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 */
 
 #ifndef Config_h
@@ -19,10 +18,12 @@ ZUM AKTIVIEREN ODER DEAKTIVIEREN VON OPTIONEN AUSKOMMENTIEREN BZW KOMMENTARSTRIC
 #define USB_BAUDRATE 9600
 #define SERIAL1_BAUDRATE 9600
 
-//Speichern der Konversation
+//Speichern der Konversation von Arduino und PC
 //#define SPEICHERN
 
 //Ausgabebefehl
+//Nach Eingabe von diesem wird eine gespeicherte
+//Konversation auf dem PC ausgegeben 
 #define AUSGABEBEFEHL '|'
 
 //Verwendeter EEPROM-Speicher, in Bytes
