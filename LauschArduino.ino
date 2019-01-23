@@ -4,10 +4,8 @@
   (z.B. USB) speichert und auf Befehl ausgeben
   kann
 
-  GEHT NUR BEI ARDUINO MEGA!
-
-  Jan Hauke, Dezember 2018
-
+  BOARD: ARDUINO MEGA!
+  
 ************************************************
   Einbinden in bestehende Schaltung:
 
@@ -34,14 +32,7 @@
 void setup () {
   Serial.begin(USB_BAUDRATE);
   Serial1.begin(SERIAL1_BAUDRATE);
-
-  pinMode(HOMING_AZM, INPUT_PULLUP);
-  pinMode(HOMING_ALT, INPUT_PULLUP);
-  pinMode(HOMING_SWITCH, INPUT_PULLUP);
-
-  //homing();
-
-  delay(500);
+  sketch_setup();
 }
 
 void loop () {
@@ -53,13 +44,13 @@ void loop () {
     char a = Serial.read();
 
     //Überprüfen
-    //if (check_befehl(a)) {
-      //weiterleiten und speichern
-      Serial1.print(a);
-      #ifdef SPEICHERN
-            speichern(a, 0);
-      #endif
-    //}
+    if (check_befehl(a)) {
+        //weiterleiten und speichern
+        Serial1.print(a);
+        #ifdef SPEICHERN
+              speichern(a, 0);
+        #endif
+    }
   }
 
   //--------------Nachricht von Serial1--------------------
@@ -69,17 +60,15 @@ void loop () {
     char b = Serial1.read();
 
     //Überprüfen
-    //if (check_antwort(b)) {
-    //Nachricht weiterleiten
-    Serial.print(b);
-
-    //Nachricht speichern
-    #ifdef SPEICHERN
-          speichern(b, 1);
-    #endif
-    //}
+    if (check_antwort(b)) {
+      //Nachricht weiterleiten
+      Serial.print(b);
+  
+      //Nachricht speichern
+      #ifdef SPEICHERN
+            speichern(b, 1);
+      #endif
+    }
   }
-  if (!digitalRead(HOMING_SWITCH)) {
-    homing();
-  }
+  sketch_loop();
 }

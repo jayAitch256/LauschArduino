@@ -6,8 +6,7 @@
 //v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v
 //                       KEYWÖRTER!!!
 
-const int keywords_anzahl = 4;
-const char keywords [keywords_anzahl][14] = { "Apfel", "Birne", "Banane", "Und so weiter"};
+const char keywords [1][1];
 
 //*****************************************************************
 
