@@ -1,6 +1,6 @@
 # LauschArduino
 
-"Lausch-Arduino", der die Kommunikation eines anderen Arduinos über die serielle Verbindung (z.B. USB) speichert und auf Befehl ausgeben kann
+Die serielle Interaktion zwischen Arduino und PC ist bei komplexen Maschinen oft nur schwer durchschaubar, was die Fehlersuche schwierig gestaltet. Dieser kleine Sketch schafft Abhilfe.
 
 ## Features
  - Speichern einer PC-/Arduino-Konversation im EEPROM (max. 8 kB!), Ausgabe im seriellen Monitor auf Befehl
@@ -11,9 +11,12 @@
 
 ## Einbinden in bestehende Schaltungen
 
-Wichtig: Das Board muss ZWEI serielle Schnittstellen haben
+Wichtig: Das Board muss ZWEI serielle Schnittstellen haben (z.B. Arduino Mega), Arduino Uno und Nano sind somit ungeeignet!
 
-USB/Serial -> PC
-Serial1 (TX/RX) -> anderer Arduino (RX/TX)
-VIN -> VIN anderer Arduino
-GND -> GND anderer Arduino
+| Anschluss LauschArduino   | Anschließen an                  |
+| -------------             | -------------                   |
+| Serial/USB                | PC                              |
+| Serial1 (TX/RX)           | anderer Arduino: Serial (RX/TX) |
+| VIN                       | anderer Arduino: VIN            |
+| GND                       | anderer Arduino: GND            |
+
